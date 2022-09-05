@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-# Created by Mikhail Shchedrin | Conscia Norway
-# The script fetches devices from LibreNMS and generates SecureCRT session from an existing one
+# Created by Mikhail Shchedrin
+# The script generates SecureCRT session from .j2 file and csv file
 
 import jinja2, re, argparse, os, csv
 from pprint import pprint
@@ -23,8 +23,6 @@ if not hostnameRe.search(sessionTemplate):
 def readCsvFileDict(csvFile):
     with open(csvFile, 'r') as f:
         reader = csv.DictReader(f)
-        # for row in reader:
-        #     pprint(row)
         return list(reader)
 
 hostList = readCsvFileDict(args.session_file)
