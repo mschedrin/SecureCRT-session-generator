@@ -1,0 +1,6 @@
+*.ini
+*.j2
+!default.j2
+.vscode
+sessions.csv
+sessions/*
